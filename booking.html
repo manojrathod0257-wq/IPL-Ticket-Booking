@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IPL Ticket Booking</title>
+</head>
+<body>
+
+    <h1>IPL 2026 Ticket Booking Form</h1>
+
+    <a href="index.html">Home</a>
+
+    <h2>Book Your Tickets</h2>
+
+    <form>
+
+        <!-- Name -->
+        <label>Full Name:</label>
+        <input type="text" name="name"
+               minlength="3" maxlength="30" required>
+        <br><br>
+
+        <!-- Email -->
+        <label>Email:</label>
+        <input type="email" name="email" required>
+        <br><br>
+
+        <!-- Phone Number -->
+        <label>Phone Number:</label>
+        <input type="tel" name="phone"
+               pattern="[0-9]{10}"
+               title="Enter 10 digit phone number"
+               required>
+        <br><br>
+
+        <!-- Match Selection -->
+        <label>Select Match:</label>
+        <select name="match" required>
+            <option value="">Choose Match</option>
+            <option>RCB vs MI</option>
+            <option>CSK vs KKR</option>
+            <option>MI vs SRH</option>
+            <option>RCB vs CSK</option>
+        </select>
+        <br><br>
+
+        <!-- Stand Category -->
+        <label>Select Stand:</label>
+        <select name="stand" required>
+            <option value="">Choose Stand</option>
+            <option>General</option>
+            <option>Premium</option>
+            <option>VIP</option>
+        </select>
+        <br><br>
+
+        <!-- Number of Tickets -->
+        <label>Number of Tickets:</label>
+        <input type="number" name="tickets"
+               min="1" max="10" required>
+        <br><br>
+
+        <!-- Booking Preference -->
+        <label>Seating Preference:</label>
+        <br>
+        <input type="radio" name="preference"
+               value="Regular" required>
+        Regular Seating
+
+        <input type="radio" name="preference"
+               value="Family">
+        Family Seating
+        <br><br>
+
+        <!-- Buttons -->
+        <input type="submit" value="Submit Booking">
+        <input type="reset" value="Reset">
+
+    </form>
+
+</body>
+</html>
