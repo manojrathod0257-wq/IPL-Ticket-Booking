@@ -1,3 +1,4 @@
+
 /* IPL 2026 TICKET BOOKING WEBSITE */
 
 /* 1. CSS VARIABLES */
@@ -293,4 +294,30 @@ footer {
     #matches {
         overflow-x: auto;
     }
+}
+
+/* 13. ACTIVITY 5: TOAST NOTIFICATION */
+
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #101b3f;
+    color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
