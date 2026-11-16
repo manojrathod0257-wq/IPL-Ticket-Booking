@@ -1,323 +1,252 @@
-
-/* IPL 2026 TICKET BOOKING WEBSITE */
-
-/* 1. CSS VARIABLES */
-
-:root {
-    --primary: #101b3f;
-    --accent: #ffcc00;
-    --background: #f4f6fb;
-    --text: #222222;
-    --white: #ffffff;
-}
-
-/* 2. GENERAL STYLING */
-
+/* General Styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: var(--background);
-    color: var(--text);
+    background-color: #f2f4f8;
+    color: #222;
     line-height: 1.6;
-    padding-top: 75px;
 }
 
-section {
-    padding: 50px 7%;
-    scroll-margin-top: 75px;
-}
-
-section h2 {
-    text-align: center;
-    color: var(--primary);
-    margin-bottom: 25px;
-}
-
-/* 3. NAVIGATION BAR */
-
+/* Navigation Bar */
 header {
-    background-color: var(--primary);
-    color: var(--white);
-    padding: 18px 7%;
+    background: linear-gradient(90deg, #071952, #088395);
+    color: white;
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }
 
-header h2 {
-    color: var(--accent);
+header h1 {
+    font-size: 26px;
 }
 
 nav a {
-    color: var(--white);
+    color: white;
     text-decoration: none;
-    margin: 10px;
+    margin: 0 12px;
     font-weight: bold;
-    transition: 0.3s;
 }
 
 nav a:hover {
-    color: var(--accent);
+    color: #ffd700;
 }
 
-/* 4. HERO / BANNER SECTION */
+/* Main Sections */
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px;
+}
 
-#home {
-    background: linear-gradient(120deg, #101b3f, #263f82);
-    color: var(--white);
+section {
+    background: white;
+    margin: 25px 0;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+section h2 {
+    color: #071952;
+    margin-bottom: 18px;
+    font-size: 26px;
+}
+
+section h3 {
+    color: #088395;
+    margin: 15px 0;
+}
+
+/* Hero Section */
+main > section:first-child {
+    background: linear-gradient(120deg, #071952, #088395);
+    color: white;
     text-align: center;
-    padding: 100px 20px;
+    padding: 65px 25px;
 }
 
-#home h1 {
-    font-size: 42px;
-    margin-bottom: 15px;
+main > section:first-child h2 {
+    color: white;
+    font-size: 34px;
 }
 
-#home p {
-    font-size: 18px;
-    margin-bottom: 20px;
+main > section:first-child p {
+    margin-bottom: 25px;
 }
 
-#home a {
+main > section:first-child a {
     display: inline-block;
-    background-color: var(--accent);
-    color: var(--primary);
-    padding: 12px 25px;
-    margin: 10px;
+    background: #ffd700;
+    color: #071952;
+    padding: 12px 22px;
+    margin: 8px;
     border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
 }
 
-#home a:hover {
-    background-color: var(--white);
+main > section:first-child a:hover {
+    background: white;
 }
 
-/* 5. ABOUT IPL SECTION */
-
-#about {
-    background-color: var(--white);
-}
-
-#about p {
-    margin-bottom: 20px;
-}
-
-#about h3 {
-    color: var(--primary);
-    margin: 20px 0 10px;
-}
-
-#about ul {
+/* Lists */
+ul {
     padding-left: 25px;
 }
 
-/* 6. MATCH SCHEDULE TABLE */
-
-#matches {
-    background-color: var(--background);
-}
-
-#matches label {
-    font-weight: bold;
-}
-
-#teamFilter {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
+/* Tables */
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: var(--white);
     margin-top: 20px;
+    background: white;
 }
 
 th {
-    background-color: var(--primary);
-    color: var(--white);
+    background: #071952;
+    color: white;
 }
 
 th, td {
-    padding: 13px;
-    text-align: center;
     border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
 }
 
-tr:hover {
-    background-color: #eef2ff;
+tr:nth-child(even) {
+    background: #f2f4f8;
 }
 
-td a {
-    background-color: #e63946;
-    color: var(--white);
-    padding: 7px 15px;
+/* Book Buttons */
+.book-btn {
+    background: #e63946;
+    color: white !important;
+    padding: 7px 14px;
     border-radius: 5px;
     text-decoration: none;
-}
-
-td a:hover {
-    background-color: var(--primary);
-}
-
-/* 7. BOOKING FORM */
-
-#booking {
-    background-color: var(--white);
-}
-
-#booking form {
-    background-color: var(--background);
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
-}
-
-#booking label {
     font-weight: bold;
 }
 
-#booking input,
-#booking select {
-    width: 100%;
-    padding: 11px;
-    margin-top: 5px;
+.book-btn:hover {
+    background: #b71c1c;
+}
+
+/* Form Styling */
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input, select {
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin-left: 5px;
 }
 
-#booking button {
-    background-color: var(--primary);
-    color: var(--white);
-    padding: 12px 25px;
+input:focus, select:focus {
+    outline: 2px solid #088395;
+}
+
+button {
+    background: #071952;
+    color: white;
+    padding: 12px 22px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
+    font-weight: bold;
 }
 
-#booking button:hover {
-    background-color: #263f82;
+button:hover {
+    background: #088395;
 }
 
-/* 8. BOOKING SUMMARY */
-
+/* Booking Summary */
 aside {
-    background-color: var(--background);
-    padding: 25px;
-    margin: 20px 7%;
-    border-radius: 10px;
-    border-top: 5px solid var(--accent);
-    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    background: #eaf6f6;
+    padding: 20px;
+    margin-top: 25px;
+    border-radius: 8px;
+    border-left: 5px solid #088395;
 }
 
-aside h2 {
-    color: var(--primary);
-    margin-bottom: 15px;
-}
-
-/* 9. MY BOOKINGS */
-
-#mybookings {
-    background-color: var(--background);
-}
-
-/* 10. GUIDELINES CARDS */
-
-#guidelines {
-    background-color: #e9edf7;
-}
-
+/* Guidelines */
 article {
-    background-color: var(--white);
-    padding: 25px;
+    background: #f2f4f8;
+    padding: 18px;
     margin: 15px 0;
-    border-radius: 10px;
-    border-left: 5px solid var(--accent);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    border-radius: 8px;
 }
 
-article h3 {
-    color: var(--primary);
-    margin-bottom: 10px;
-}
-
-/* 11. FOOTER */
-
+/* Footer */
 footer {
-    background-color: var(--primary);
-    color: var(--white);
+    background: #071952;
+    color: white;
     text-align: center;
     padding: 25px;
 }
 
-/* 12. RESPONSIVE DESIGN */
+/* Toast Notification */
+#toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
 
+/* Show Toast */
+#toast.show {
+    visibility: visible;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-
     header {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
     }
 
-    nav {
-        text-align: center;
+    nav a {
+        display: inline-block;
+        margin: 5px;
     }
 
-    #home h1 {
-        font-size: 30px;
+    main {
+        padding: 10px;
     }
 
     section {
-        padding: 35px 5%;
+        padding: 18px;
+        overflow-x: auto;
     }
 
     table {
-        min-width: 750px;
+        min-width: 650px;
     }
 
-    #matches {
-        overflow-x: auto;
+    main > section:first-child h2 {
+        font-size: 26px;
     }
-}
-
-/* 13. ACTIVITY 5: TOAST NOTIFICATION */
-
-.toast {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #101b3f;
-    color: #ffffff;
-    padding: 15px 25px;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: bold;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px);
-    transition: all 0.3s ease;
-    z-index: 9999;
-}
-
-.toast.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
 }

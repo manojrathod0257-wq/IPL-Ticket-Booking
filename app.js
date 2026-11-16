@@ -1,83 +1,32 @@
-// Activity 5: Filter Matches by Team
+// Reusable Toast Notification Function
+function showToast(message) {
+    const toast = document.getElementById("toast");
 
-document.addEventListener("DOMContentLoaded", function () {
+    toast.textContent = message;
+    toast.classList.add("show");
 
-    const teamFilter = document.getElementById("team");
-    const matchRows = document.querySelectorAll("#matches tbody tr");
+    setTimeout(function () {
+        toast.classList.remove("show");
+    }, 3000);
+}
 
-    if (teamFilter) {
 
-        teamFilter.addEventListener("change", function () {
+// Smooth Scrolling for Book Buttons
+const bookButtons = document.querySelectorAll(".book-btn");
 
-            const selectedTeam = teamFilter.value;
+bookButtons.forEach(function (button) {
 
-            matchRows.forEach(function (row) {
+    button.addEventListener("click", function (event) {
 
-                const teams = row.cells[1].textContent;
+        event.preventDefault();
 
-                if (selectedTeam === "all" || teams.includes(selectedTeam)) {
-                    row.style.display = "";
-                } else {
-                    row.style.display = "none";
-                }
+        const bookingForm = document.getElementById("booking");
 
-            });
-
+        bookingForm.scrollIntoView({
+            behavior: "smooth"
         });
 
-    }
-
-});
-
-// Activity 5: Filter Matches by Team
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const teamFilter = document.getElementById("team");
-    const matchRows = document.querySelectorAll("#matches tbody tr");
-
-    if (teamFilter) {
-
-        teamFilter.addEventListener("change", function () {
-
-            const selectedTeam = teamFilter.value;
-
-            matchRows.forEach(function (row) {
-
-                const teams = row.cells[1].textContent;
-
-                if (selectedTeam === "all" || teams.includes(selectedTeam)) {
-                    row.style.display = "";
-                } else {
-                    row.style.display = "none";
-                }
-
-            });
-
-        });
-
-    }
-
-});
-
-// Activity 5: Booking Form Submission
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const bookingForm = document.getElementById("bookingForm");
-
-    if (bookingForm) {
-
-        bookingForm.addEventListener("submit", function (event) {
-
-            event.preventDefault();
-
-            showToast("Your booking details have been submitted successfully!");
-
-            bookingForm.reset();
-
-        });
-
-    }
+        showToast("Taking you to the booking form!");
+    });
 
 });
